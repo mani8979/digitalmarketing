@@ -8,22 +8,21 @@ const Footer = () => {
 
           {/* Brand Column */}
           <div>
-            <div className="brand-logo" style={{ marginBottom: '1.25rem' }}>
-              <img
-                src="/logo.jpg"
-                alt="Grow Bird Logo"
-                style={{
-                  width: '42px',
-                  height: '42px',
-                  objectFit: 'cover',
-                  borderRadius: '10px',
-                  flexShrink: 0,
-                }}
-              />
-              <div className="brand-logo-text">
-                <span className="grow">Grow</span>
-                <span className="bird">Bird</span>
-              </div>
+            <div style={{ marginBottom: '1.5rem' }}>
+              <a href="#hero" style={{ display: 'inline-block' }}>
+                <img
+                  src="/logo.png"
+                  alt="Grow Bird — Smart Marketing. Real Growth."
+                  style={{
+                    height: '56px',
+                    width: 'auto',
+                    maxWidth: '220px',
+                    objectFit: 'contain',
+                    display: 'block',
+                    filter: 'brightness(1.1)',
+                  }}
+                />
+              </a>
             </div>
             <p className="footer-brand-bio">
               Smart Marketing. Real Growth.<br />

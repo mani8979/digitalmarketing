@@ -37,22 +37,19 @@ const Navbar = () => {
     <>
       <header className={`navbar ${scrolled ? 'scrolled' : ''}`} id="navbar" style={{ zIndex: 1002 }}>
         <div className="container navbar-container">
-          <a href="#hero" className="brand-logo" aria-label="Grow Bird Home" onClick={closeMenu}>
+          <a href="#hero" className="brand-logo" aria-label="Grow Bird Home" onClick={closeMenu} style={{ padding: 0 }}>
             <img
-              src="/logo.jpg"
-              alt="Grow Bird Logo"
+              src="/logo.png"
+              alt="Grow Bird — Smart Marketing. Real Growth."
               style={{
-                width: '38px',
-                height: '38px',
-                objectFit: 'cover',
-                borderRadius: '8px',
+                height: '44px',
+                width: 'auto',
+                maxWidth: '180px',
+                objectFit: 'contain',
+                display: 'block',
                 flexShrink: 0,
               }}
             />
-            <div className="brand-logo-text">
-              <span className="grow">Grow</span>
-              <span className="bird">Bird</span>
-            </div>
           </a>
 
           <nav className="nav-menu" aria-label="Primary Navigation">
