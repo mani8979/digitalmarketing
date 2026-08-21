@@ -9,12 +9,17 @@ const Footer = () => {
           {/* Brand Column */}
           <div>
             <div className="brand-logo" style={{ marginBottom: '1.25rem' }}>
-              <div className="brand-logo-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M3 18L9 11L14 15L21 6"></path>
-                  <path d="M15 6H21V12"></path>
-                </svg>
-              </div>
+              <img
+                src="/logo.jpg"
+                alt="Grow Bird Logo"
+                style={{
+                  width: '42px',
+                  height: '42px',
+                  objectFit: 'cover',
+                  borderRadius: '10px',
+                  flexShrink: 0,
+                }}
+              />
               <div className="brand-logo-text">
                 <span className="grow">Grow</span>
                 <span className="bird">Bird</span>

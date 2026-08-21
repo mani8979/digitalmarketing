@@ -38,12 +38,17 @@ const Navbar = () => {
       <header className={`navbar ${scrolled ? 'scrolled' : ''}`} id="navbar" style={{ zIndex: 1002 }}>
         <div className="container navbar-container">
           <a href="#hero" className="brand-logo" aria-label="Grow Bird Home" onClick={closeMenu}>
-            <div className="brand-logo-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M3 18L9 11L14 15L21 6"></path>
-                <path d="M15 6H21V12"></path>
-              </svg>
-            </div>
+            <img
+              src="/logo.jpg"
+              alt="Grow Bird Logo"
+              style={{
+                width: '38px',
+                height: '38px',
+                objectFit: 'cover',
+                borderRadius: '8px',
+                flexShrink: 0,
+              }}
+            />
             <div className="brand-logo-text">
               <span className="grow">Grow</span>
               <span className="bird">Bird</span>
