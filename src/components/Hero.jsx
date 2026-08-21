@@ -71,12 +71,12 @@ const Hero = () => {
             </p>
 
             <div className="hero-cta-group">
-              <button className="btn btn-primary btn-lg" data-trigger-consultation>
-                <span>Get Free Consultation</span>
+              <button className="btn btn-primary btn-lg" onClick={() => window.location.href='#contact'}>
+                <span>Get Started</span>
                 <span className="btn-arrow">→</span>
               </button>
-              <a href="#portfolio" className="btn btn-secondary btn-lg">
-                <span>View Our Work</span>
+              <a href="#services" className="btn btn-secondary btn-lg">
+                <span>View Our Services</span>
               </a>
             </div>
 
@@ -160,20 +160,15 @@ const Hero = () => {
                 </svg>
               </div>
 
-              {/* Stats Rows */}
-              <div className="hero-stats-row">
-                <div className="hero-stat-pill">
-                  <div className="stat-pill-label">Growth Velocity</div>
-                  <div className="stat-pill-val green" ref={el => statsRef.current[0] = el} data-counter="240" data-prefix="+" data-suffix="%">0</div>
-                </div>
-                <div className="hero-stat-pill">
-                  <div className="stat-pill-label">SEO Visibility</div>
-                  <div className="stat-pill-val blue" ref={el => statsRef.current[1] = el} data-counter="98" data-suffix="/100">0</div>
-                </div>
-                <div className="hero-stat-pill">
-                  <div className="stat-pill-label">Campaign ROI</div>
-                  <div className="stat-pill-val green" ref={el => statsRef.current[2] = el} data-counter="4.8" data-suffix="x">0</div>
-                </div>
+              {/* Trusted Process Sequence */}
+              <div className="hero-process-row" style={{ display: 'flex', justifyContent: 'space-between', padding: '1.25rem 1.5rem', borderTop: '1px solid var(--border-subtle)', background: 'var(--bg-card)' }}>
+                <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-secondary)' }}>Creative</div>
+                <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-muted)' }}>•</div>
+                <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-secondary)' }}>Strategy</div>
+                <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-muted)' }}>•</div>
+                <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-secondary)' }}>Technology</div>
+                <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-muted)' }}>•</div>
+                <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--accent-green)' }}>Growth</div>
               </div>
             </div>
 

@@ -21,30 +21,29 @@ const Footer = () => {
             Smart Marketing. Real Growth. <br/>
             We build digital ecosystems that turn visibility into measurable business revenue.
           </p>
-          <div className="footer-socials">
-            <a href="#" className="social-link" aria-label="LinkedIn">in</a>
-            <a href="#" className="social-link" aria-label="Instagram">ig</a>
-            <a href="#" className="social-link" aria-label="Twitter">tw</a>
-          </div>
+          {/* Social icons removed until real accounts are provided */}
         </div>
 
         <div className="footer-links-col">
           <h4 className="footer-heading">Services</h4>
           <nav className="footer-nav">
-            <a href="#services" className="footer-link">Strategy & Consulting</a>
-            <a href="#services" className="footer-link">Website Design</a>
-            <a href="#services" className="footer-link">SEO & Content</a>
-            <a href="#services" className="footer-link">Paid Advertising</a>
-            <a href="#services" className="footer-link">AI Automation</a>
+            <a href="#services" className="footer-link">Digital Marketing</a>
+            <a href="#services" className="footer-link">Website Development</a>
+            <a href="#services" className="footer-link">Social Media</a>
+            <a href="#services" className="footer-link">SEO</a>
+            <a href="#services" className="footer-link">AI Solutions</a>
+            <a href="#services" className="footer-link">Video Editing</a>
           </nav>
         </div>
 
         <div className="footer-links-col">
-          <h4 className="footer-heading">Company</h4>
+          <h4 className="footer-heading">Quick Links</h4>
           <nav className="footer-nav">
-            <a href="#why-us" className="footer-link">About Us</a>
+            <a href="#hero" className="footer-link">Home</a>
+            <a href="#about" className="footer-link">About</a>
+            <a href="#services" className="footer-link">Services</a>
             <a href="#portfolio" className="footer-link">Our Work</a>
-            <a href="#process" className="footer-link">Process</a>
+            <a href="#process" className="footer-link">How We Work</a>
             <a href="#contact" className="footer-link">Contact</a>
           </nav>
         </div>
@@ -63,7 +62,7 @@ const Footer = () => {
 
       <div className="footer-bottom">
         <div className="container footer-bottom-flex">
-          <p>&copy; {new Date().getFullYear()} Grow Bird Digital Agency. All rights reserved.</p>
+          <p>&copy; 2026 Grow Bird. All Rights Reserved.</p>
           <div className="footer-legal-links">
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>

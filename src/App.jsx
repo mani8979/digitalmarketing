@@ -9,14 +9,13 @@ import './styles/responsive.css';
 import Loader from './components/Loader';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import TrustPillars from './components/TrustPillars';
-import ServicesStack from './components/ServicesStack';
+import About from './components/About';
+import Services from './components/Services';
 import WhyUs from './components/WhyUs';
-import Ecosystem from './components/Ecosystem';
-import Process from './components/Process';
+import WhoWeHelp from './components/WhoWeHelp';
 import Portfolio from './components/Portfolio';
-import Testimonials from './components/Testimonials';
-import Calculator from './components/Calculator';
+import Process from './components/Process';
+import CtaSection from './components/CtaSection';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -42,8 +41,6 @@ function App() {
     }
 
     requestAnimationFrame(raf);
-
-    // Provide lenis instance to GSAP if needed
     window.lenis = lenis;
 
     return () => {
@@ -59,14 +56,13 @@ function App() {
       <Navbar />
       <main>
         <Hero />
-        <TrustPillars />
-        <ServicesStack />
+        <About />
+        <Services />
         <WhyUs />
-        <Ecosystem />
-        <Process />
+        <WhoWeHelp />
         <Portfolio />
-        <Testimonials />
-        <Calculator />
+        <Process />
+        <CtaSection />
         <Contact />
       </main>
       <Footer />
