@@ -1,0 +1,361 @@
+/* ==========================================================================
+   GROW BIRD — RESPONSIVE MEDIA QUERIES (RESPONSIVE.CSS)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. LAPTOP & SMALL DESKTOP (max-width: 1200px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+  :root {
+    --section-spacing: 5.5rem;
+  }
+
+  .pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .process-connecting-line {
+    display: none;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. TABLET LANDSCAPE & PORTRAIT (max-width: 992px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+  :root {
+    --section-spacing: 4.75rem;
+    --container-padding: 1.5rem;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  .hamburger-btn {
+    display: flex;
+  }
+
+  .hero-section {
+    padding-top: 7.5rem;
+    padding-bottom: 4rem;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-subtitle,
+  .hero-statement {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-statement {
+    border-left: none;
+    border-top: 2px solid rgba(5, 150, 105, 0.4);
+    padding-left: 0;
+    padding-top: 0.75rem;
+  }
+
+  .hero-cta-group {
+    justify-content: center;
+  }
+
+  .hero-badges-strip {
+    justify-content: center;
+  }
+
+  .hero-visual-wrapper {
+    max-width: 520px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .stack-card {
+    grid-template-columns: 1fr 0.9fr;
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+
+  .bento-col-7,
+  .bento-col-5,
+  .bento-col-4 {
+    grid-column: span 12;
+  }
+
+  .capability-panel-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .industries-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .industry-cta-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .calculator-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-top-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. MOBILE DEVICES (max-width: 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  :root {
+    --section-spacing: 3.75rem;
+    --container-padding: 1.25rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .hero-section {
+    padding-top: 6.5rem;
+    padding-bottom: 3rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.2rem, 7.5vw, 2.9rem);
+    line-height: 1.12;
+  }
+
+  .hero-subtitle {
+    font-size: 1.05rem;
+  }
+
+  .hero-stats-row {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+
+  .floating-badge {
+    display: none;
+  }
+
+  /* Services Sticky Stacking Deck on Mobile */
+  .services-stack-section {
+    padding: 3.5rem 1rem 4.5rem;
+  }
+
+  .stack__header {
+    margin-bottom: 2rem;
+  }
+
+  .stack__deck {
+    height: auto;
+    gap: 1.5rem;
+  }
+
+  .stack-card {
+    position: sticky;
+    top: 80px;
+    grid-template-columns: 1fr;
+    padding: 1.5rem 1.25rem;
+    gap: 1.25rem;
+    border-radius: var(--radius-lg);
+    min-height: auto;
+  }
+
+  .stack-card:nth-child(1) { top: 75px; }
+  .stack-card:nth-child(2) { top: 85px; }
+  .stack-card:nth-child(3) { top: 95px; }
+  .stack-card:nth-child(4) { top: 105px; }
+  .stack-card:nth-child(5) { top: 115px; }
+  .stack-card:nth-child(6) { top: 125px; }
+  .stack-card:nth-child(7) { top: 135px; }
+  .stack-card:nth-child(8) { top: 145px; }
+
+  .stack-card__media {
+    display: none;
+  }
+
+  .stack-card__title {
+    font-size: clamp(1.45rem, 5.5vw, 1.85rem);
+  }
+
+  .stack-card__lede {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .stack-card__body {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    margin-bottom: 0.85rem;
+  }
+
+  .stack-card__tags {
+    margin-bottom: 1rem;
+  }
+
+  .stack-card__tag {
+    font-size: 0.72rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .bento-card {
+    padding: 1.5rem;
+  }
+
+  .ecosystem-visual-wrap {
+    height: auto;
+    min-height: 440px;
+  }
+
+  .ecosystem-center-hub {
+    width: 110px;
+    height: 110px;
+    padding: 0.4rem;
+  }
+
+  .hub-brand-name {
+    font-size: 0.65rem;
+  }
+
+  .hub-title {
+    font-size: 0.8rem;
+  }
+
+  .ecosystem-node {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  .ecosystem-node-icon {
+    width: 22px;
+    height: 22px;
+    font-size: 0.75rem;
+  }
+
+  .node-pos-1 { top: 2%; left: 50%; }
+  .node-pos-2 { top: 14%; right: 4%; }
+  .node-pos-3 { top: 50%; right: 0%; }
+  .node-pos-4 { bottom: 14%; right: 4%; }
+  .node-pos-5 { bottom: 2%; left: 50%; }
+  .node-pos-6 { bottom: 14%; left: 4%; }
+  .node-pos-7 { top: 50%; left: 0%; }
+  .node-pos-8 { top: 14%; left: 4%; }
+
+  .process-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .industries-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .testimonial-card-single {
+    padding: 2rem 1.25rem;
+  }
+
+  .calculator-card {
+    padding: 1.75rem;
+  }
+
+  .cta-banner-card {
+    padding: 3.5rem 1.5rem;
+  }
+
+  .contact-form-card {
+    padding: 1.75rem;
+  }
+
+  .form-grid-2 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-bottom-bar {
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. SMALL MOBILE (max-width: 480px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+  }
+
+  .capabilities-tabs {
+    gap: 0.4rem;
+  }
+
+  .cap-tab-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.82rem;
+  }
+
+  .portfolio-filter-bar {
+    gap: 0.4rem;
+  }
+
+  .portfolio-filter-btn {
+    padding: 0.45rem 0.9rem;
+    font-size: 0.8rem;
+  }
+
+  .toast-container {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+  }
+}

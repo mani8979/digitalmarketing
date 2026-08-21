@@ -1,0 +1,308 @@
+/* ==========================================================================
+   GROW BIRD — PREMIUM DESIGN SYSTEM (MAIN.CSS) - WHITE / LIGHT THEME
+   "Smart Marketing. Real Growth."
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* Core Brand Backgrounds (White & Crisp Light) */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F8FAFC;
+  --bg-tertiary: #F1F5F9;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #F8FAFC;
+  --bg-glass: rgba(255, 255, 255, 0.92);
+  --bg-glass-subtle: rgba(15, 23, 42, 0.03);
+
+  /* Growth Accent Colors (Electric Emerald & Deep Mint) */
+  --accent-green: #059669;
+  --accent-green-hover: #047857;
+  --accent-emerald: #10B981;
+  --accent-emerald-dark: #065F46;
+  --accent-lime: #16A34A;
+  --accent-mint: #D1FAE5;
+  --accent-glow-green: rgba(5, 150, 105, 0.22);
+  --accent-glow-subtle: rgba(5, 150, 105, 0.08);
+
+  /* Tech & Trust Colors (Rich Indigo & Deep Blue) */
+  --tech-blue: #2563EB;
+  --tech-blue-hover: #1D4ED8;
+  --tech-indigo: #4F46E5;
+  --tech-cyan: #0891B2;
+  --tech-glow-blue: rgba(37, 99, 235, 0.18);
+
+  /* Neutral & Dark Typography (High Contrast & Clean Legibility) */
+  --text-pure: #0B0F19;
+  --text-primary: #1E293B;
+  --text-secondary: #475569;
+  --text-muted: #64748B;
+  --text-dim: #94A3B8;
+  --text-dark: #070B14;
+
+  /* Borders & Dividers */
+  --border-subtle: rgba(15, 23, 42, 0.08);
+  --border-medium: rgba(15, 23, 42, 0.14);
+  --border-bright: rgba(5, 150, 105, 0.4);
+  --border-blue: rgba(37, 99, 235, 0.35);
+
+  /* Gradients */
+  --grad-growth: linear-gradient(135deg, #059669 0%, #2563EB 100%);
+  --grad-hero: linear-gradient(180deg, #0B0F19 0%, #1E293B 50%, #475569 100%);
+  --grad-accent-text: linear-gradient(135deg, #059669 0%, #0284C7 60%, #4F46E5 100%);
+  --grad-card: linear-gradient(160deg, #FFFFFF 0%, #F8FAFC 100%);
+  --grad-card-hover: linear-gradient(160deg, rgba(5, 150, 105, 0.04) 0%, rgba(37, 99, 235, 0.03) 100%);
+  --grad-badge: linear-gradient(135deg, rgba(5, 150, 105, 0.1) 0%, rgba(37, 99, 235, 0.08) 100%);
+
+  /* Typography */
+  --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Shadows & Glows */
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 8px 20px rgba(15, 23, 42, 0.07);
+  --shadow-lg: 0 16px 36px rgba(15, 23, 42, 0.09);
+  --shadow-card: 0 10px 30px -10px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(15, 23, 42, 0.04);
+  --shadow-card-hover: 0 20px 40px -15px rgba(5, 150, 105, 0.16), 0 10px 25px -8px rgba(15, 23, 42, 0.1);
+  --glow-btn: 0 0 25px rgba(5, 150, 105, 0.35), 0 4px 15px rgba(5, 150, 105, 0.2);
+  --glow-btn-blue: 0 0 25px rgba(37, 99, 235, 0.35);
+
+  /* Layout & Spacing */
+  --container-max: 1280px;
+  --container-wide: 1400px;
+  --container-padding: 2rem;
+  --section-spacing: 7rem;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --trans-fast: 0.2s var(--ease-smooth);
+  --trans-medium: 0.35s var(--ease-spring);
+  --trans-slow: 0.6s var(--ease-spring);
+}
+
+/* Base Reset & Box Sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  color-scheme: light;
+  background-color: #FFFFFF !important;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: #FFFFFF !important;
+  color: #1E293B !important;
+  line-height: 1.65;
+  font-weight: 400;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Grid Texture for Crisp SaaS Look */
+.bg-grid-texture {
+  position: fixed;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(15, 23, 42, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.035) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+  mask-image: radial-gradient(ellipse at 50% 30%, black 45%, transparent 85%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 30%, black 45%, transparent 85%);
+}
+
+/* Typography Hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: #0B0F19 !important;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+p {
+  color: #475569 !important;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--trans-fast);
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* Utility Containers */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+  position: relative;
+  z-index: 1;
+}
+
+.container-wide {
+  width: 100%;
+  max-width: var(--container-wide);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+  position: relative;
+  z-index: 1;
+}
+
+.section {
+  padding-top: var(--section-spacing);
+  padding-bottom: var(--section-spacing);
+  position: relative;
+  z-index: 1;
+}
+
+.section-tight {
+  padding-top: calc(var(--section-spacing) * 0.7);
+  padding-bottom: calc(var(--section-spacing) * 0.7);
+  position: relative;
+  z-index: 1;
+}
+
+/* Section Header Shared Styling */
+.section-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 3.75rem auto;
+  position: relative;
+}
+
+.section-header.text-left {
+  text-align: left;
+  margin-left: 0;
+}
+
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.9rem;
+  background: #ECFDF5 !important;
+  border: 1px solid rgba(5, 150, 105, 0.25) !important;
+  border-radius: var(--radius-full);
+  color: #059669 !important;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 2px 10px rgba(5, 150, 105, 0.08);
+}
+
+.section-eyebrow .dot {
+  width: 6px;
+  height: 6px;
+  background-color: #059669 !important;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #059669;
+  animation: pulseDot 2s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+
+.section-title {
+  font-size: clamp(2.1rem, 4vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #0B0F19 !important;
+  margin-bottom: 1.25rem;
+  line-height: 1.2;
+}
+
+.section-title .text-gradient {
+  background: var(--grad-accent-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.section-description {
+  font-size: 1.125rem;
+  color: #475569 !important;
+  line-height: 1.7;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 5px;
+  border: 2px solid #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #059669;
+}
+
+/* Selection */
+::selection {
+  background: rgba(5, 150, 105, 0.2);
+  color: #0B0F19;
+}
+
+/* Accessibility Focus States */
+:focus-visible {
+  outline: 2px solid var(--accent-green);
+  outline-offset: 3px;
+}
