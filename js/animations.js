@@ -158,7 +158,7 @@ function initLenisAndStackScroll() {
       duration: 1.15,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
-      touchMultiplier: 1.3,
+      touchMultiplier: 1.2,
     });
 
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
@@ -184,25 +184,25 @@ function initLenisAndStackScroll() {
 
   if (!servicesSection || !cards.length) return;
 
-  const isMobile = window.innerWidth <= 768;
-  const PEEK = isMobile ? 12 : 24;
-  const SCALE_STEP = isMobile ? 0.022 : 0.03;
+  const isMobile = () => window.innerWidth <= 768;
+  const getPeek = () => (isMobile() ? 10 : 20);
+  const getScaleStep = () => (isMobile() ? 0.018 : 0.028);
 
   function stackPose(index) {
     return {
-      y: index * PEEK,
-      scale: 1 - index * SCALE_STEP,
+      y: index * getPeek(),
+      scale: 1 - index * getScaleStep(),
     };
   }
 
-  // Initial stacking set
+  // Initial stacking set with clean baseline
   cards.forEach((card, i) => {
     gsap.set(card, {
       zIndex: cards.length - i,
-      y: window.innerHeight * 0.38 + i * PEEK,
-      scale: stackPose(i).scale * 0.95,
+      y: () => stackPose(i).y,
+      scale: () => stackPose(i).scale,
+      opacity: () => (i === 0 ? 1 : Math.max(0.75 - i * 0.06, 0.45)),
       rotate: 0,
-      opacity: 1,
       transformOrigin: '50% 0%',
     });
   });
@@ -212,60 +212,54 @@ function initLenisAndStackScroll() {
     scrollTrigger: {
       trigger: '#services',
       start: 'top top',
-      end: () => `+=${cards.length * window.innerHeight * 0.65}`,
+      end: () => `+=${cards.length * (isMobile() ? window.innerHeight * 0.72 : window.innerHeight * 0.68)}`,
       pin: true,
-      scrub: 0.75,
+      scrub: 0.6,
       anticipatePin: 1,
       invalidateOnRefresh: true,
     },
   });
 
-  // Cards entrance to stack
-  cards.forEach((card, i) => {
-    tl.to(
-      card,
-      {
-        ...stackPose(i),
-        ease: 'power3.out',
-        duration: 1,
-      },
-      i * 0.06
-    );
-  });
+  // Hold initial state briefly
+  tl.to({}, { duration: 0.15 });
 
-  tl.to({}, { duration: 0.25 });
-
-  // Progressive fly-off of top cards
-  const flyAt = tl.duration();
+  // Progressive fly-off of top cards and smooth promotion of remaining cards
   const flying = cards.slice(0, -1);
 
   flying.forEach((card, i) => {
-    const time = flyAt + i * 0.95;
+    const time = tl.duration() + 0.1;
     const behind = cards.slice(i + 1);
 
+    // Active top card lifts and cleanly fades out (opacity: 0) before reaching the header
     tl.to(
       card,
       {
-        y: () => -window.innerHeight * 1.12,
-        rotate: isMobile ? -8 : -15,
-        scale: 0.92,
-        opacity: 0.25,
+        y: () => -window.innerHeight * 0.7,
+        rotate: isMobile() ? -4 : -8,
+        scale: 0.94,
+        opacity: 0,
         ease: 'power2.inOut',
         duration: 0.9,
       },
       time
     );
 
-    tl.to(
-      behind,
-      {
-        y: (index) => stackPose(index).y,
-        scale: (index) => stackPose(index).scale,
-        ease: 'none',
-        duration: 0.9,
-      },
-      time
-    );
+    // Remaining cards step forward smoothly without sudden jumps
+    behind.forEach((bCard, bIdx) => {
+      tl.to(
+        bCard,
+        {
+          y: () => stackPose(bIdx).y,
+          scale: () => stackPose(bIdx).scale,
+          opacity: () => (bIdx === 0 ? 1 : Math.max(0.75 - bIdx * 0.06, 0.45)),
+          ease: 'power1.out',
+          duration: 0.9,
+        },
+        time
+      );
+    });
+
+    tl.to({}, { duration: 0.15 });
   });
 
   tl.to({}, { duration: 0.2 });
