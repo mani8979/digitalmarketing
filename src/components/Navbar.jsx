@@ -1,0 +1,106 @@
+import React, { useState, useEffect } from 'react';
+
+const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 40) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }, [menuOpen]);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
+  return (
+    <>
+      <header className={`navbar ${scrolled ? 'scrolled' : ''}`} id="navbar" style={{ zIndex: 1002 }}>
+        <div className="container navbar-container">
+          <a href="#hero" className="brand-logo" aria-label="Grow Bird Home" onClick={closeMenu}>
+            <div className="brand-logo-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M3 18L9 11L14 15L21 6"></path>
+                <path d="M15 6H21V12"></path>
+              </svg>
+            </div>
+            <div className="brand-logo-text">
+              <span className="grow">Grow</span>
+              <span className="bird">Bird</span>
+            </div>
+          </a>
+
+          <nav className="nav-menu" aria-label="Primary Navigation">
+            <a href="#hero" className="nav-link active">Home</a>
+            <a href="#services" className="nav-link">Services</a>
+            <a href="#why-us" className="nav-link">Why Us</a>
+            <a href="#ecosystem" className="nav-link">Ecosystem</a>
+            <a href="#process" className="nav-link">Process</a>
+            <a href="#industries" className="nav-link">Industries</a>
+            <a href="#portfolio" className="nav-link">Our Work</a>
+            <a href="#testimonials" className="nav-link">Testimonials</a>
+            <a href="#contact" className="nav-link">Contact</a>
+          </nav>
+
+          <div className="nav-actions">
+            <button className="btn btn-primary btn-sm" data-trigger-consultation>
+              <span>Get Free Consultation</span>
+              <span className="btn-arrow" aria-hidden="true">→</span>
+            </button>
+            <button 
+              className={`hamburger-btn ${menuOpen ? 'active' : ''}`} 
+              id="hamburgerBtn" 
+              aria-label="Toggle Mobile Menu" 
+              aria-expanded={menuOpen}
+              onClick={toggleMenu}
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <div className={`mobile-nav-drawer ${menuOpen ? 'open' : ''}`} id="mobileNavDrawer" aria-hidden={!menuOpen}>
+        <nav className="mobile-nav-links">
+          <a href="#hero" className="mobile-nav-link" onClick={closeMenu}>Home</a>
+          <a href="#services" className="mobile-nav-link" onClick={closeMenu}>Services</a>
+          <a href="#why-us" className="mobile-nav-link" onClick={closeMenu}>Why Us</a>
+          <a href="#ecosystem" className="mobile-nav-link" onClick={closeMenu}>Ecosystem</a>
+          <a href="#process" className="mobile-nav-link" onClick={closeMenu}>Process</a>
+          <a href="#industries" className="mobile-nav-link" onClick={closeMenu}>Industries</a>
+          <a href="#portfolio" className="mobile-nav-link" onClick={closeMenu}>Our Work</a>
+          <a href="#testimonials" className="mobile-nav-link" onClick={closeMenu}>Testimonials</a>
+          <a href="#contact" className="mobile-nav-link" onClick={closeMenu}>Contact</a>
+        </nav>
+        <button className="btn btn-primary btn-lg" data-trigger-consultation style={{ width: '100%', maxWidth: '300px' }}>
+          <span>Get Free Consultation</span>
+          <span className="btn-arrow">→</span>
+        </button>
+      </div>
+    </>
+  );
+};
+
+export default Navbar;
