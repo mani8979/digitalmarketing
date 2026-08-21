@@ -8,8 +8,8 @@
 .loader {
   position: fixed;
   inset: 0;
-  background: #0B0F19;
-  color: #F8FAFC;
+  background: #0B0F19 !important;
+  color: #FFFFFF !important;
   overflow: hidden;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   z-index: 99999;
@@ -56,13 +56,18 @@
   font-weight: 900;
   letter-spacing: -0.04em;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #FFFFFF !important;
   line-height: 0.9;
   white-space: nowrap;
 }
 
-.loader-title .bird-word {
-  color: var(--accent-green);
+.loader-title .char-span {
+  color: #FFFFFF !important;
+}
+
+.loader-title .bird-word .char-span {
+  color: #10E599 !important;
+  text-shadow: 0 0 30px rgba(16, 229, 153, 0.8) !important;
 }
 
 .loader-count {
@@ -72,8 +77,13 @@
   overflow: hidden;
   font-family: var(--font-mono);
   font-size: clamp(1.1rem, 2vw, 2.2rem);
-  color: var(--accent-green);
-  font-weight: 700;
+  color: #10E599 !important;
+  font-weight: 800;
+  text-shadow: 0 0 15px rgba(16, 229, 153, 0.5);
+}
+
+.loader-count p {
+  color: #10E599 !important;
 }
 
 /* --------------------------------------------------------------------------

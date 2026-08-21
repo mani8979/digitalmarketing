@@ -1,6 +1,16 @@
 /* ==========================================================================
-   GROW BIRD — RESPONSIVE MEDIA QUERIES (RESPONSIVE.CSS)
+   GROW BIRD — RESPONSIVE MEDIA QUERIES (RESPONSIVE.CSS) - 0 HORIZONTAL SCROLL
    ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   0. GLOBAL OVERFLOW LOCKDOWN
+   -------------------------------------------------------------------------- */
+html, body {
+  overflow-x: hidden !important;
+  width: 100%;
+  max-width: 100vw;
+  position: relative;
+}
 
 /* --------------------------------------------------------------------------
    1. LAPTOP & SMALL DESKTOP (max-width: 1200px)
@@ -86,6 +96,10 @@
     width: 100%;
   }
 
+  .floating-badge {
+    display: none !important;
+  }
+
   .stack-card {
     grid-template-columns: 1fr 0.9fr;
     gap: 1.5rem;
@@ -162,21 +176,29 @@
   }
 
   .floating-badge {
-    display: none;
+    display: none !important;
   }
 
   /* Services Sticky Stacking Deck on Mobile */
   .services-stack-section {
     padding: 3.5rem 1rem 4.5rem;
+    overflow-x: hidden;
   }
 
   .stack__header {
     margin-bottom: 2rem;
   }
 
+  .stack__stage {
+    width: 100%;
+    max-width: 100%;
+  }
+
   .stack__deck {
     height: auto;
     gap: 1.5rem;
+    width: 100%;
+    max-width: 100%;
   }
 
   .stack-card {
@@ -187,6 +209,9 @@
     gap: 1.25rem;
     border-radius: var(--radius-lg);
     min-height: auto;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .stack-card:nth-child(1) { top: 75px; }
@@ -235,9 +260,18 @@
     padding: 1.5rem;
   }
 
+  /* Ecosystem on Mobile - Safe Bounds */
+  .ecosystem-section {
+    overflow-x: hidden !important;
+  }
+
   .ecosystem-visual-wrap {
     height: auto;
-    min-height: 440px;
+    min-height: 480px;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
   }
 
   .ecosystem-center-hub {
@@ -257,6 +291,7 @@
   .ecosystem-node {
     padding: 0.4rem 0.75rem;
     font-size: 0.75rem;
+    white-space: nowrap;
   }
 
   .ecosystem-node-icon {
@@ -265,14 +300,14 @@
     font-size: 0.75rem;
   }
 
-  .node-pos-1 { top: 2%; left: 50%; }
-  .node-pos-2 { top: 14%; right: 4%; }
-  .node-pos-3 { top: 50%; right: 0%; }
-  .node-pos-4 { bottom: 14%; right: 4%; }
-  .node-pos-5 { bottom: 2%; left: 50%; }
-  .node-pos-6 { bottom: 14%; left: 4%; }
-  .node-pos-7 { top: 50%; left: 0%; }
-  .node-pos-8 { top: 14%; left: 4%; }
+  .node-pos-1 { top: 3%; left: 50%; transform: translateX(-50%); }
+  .node-pos-2 { top: 15%; right: 5%; transform: none; }
+  .node-pos-3 { top: 50%; right: 2%; transform: translateY(-50%); }
+  .node-pos-4 { bottom: 15%; right: 5%; transform: none; }
+  .node-pos-5 { bottom: 3%; left: 50%; transform: translateX(-50%); }
+  .node-pos-6 { bottom: 15%; left: 5%; transform: none; }
+  .node-pos-7 { top: 50%; left: 2%; transform: translateY(-50%); }
+  .node-pos-8 { top: 15%; left: 5%; transform: none; }
 
   .process-grid {
     grid-template-columns: 1fr;

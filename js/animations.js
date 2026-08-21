@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /**
- * 0. Outfit-style Intro Loader Animation
+ * 0. Outfit-style Intro Loader Animation (High-Contrast White & Emerald)
  */
 function initIntroLoader() {
   const loader = document.getElementById('introLoader');
@@ -21,7 +21,7 @@ function initIntroLoader() {
 
   if (!loader) return;
 
-  // Safety fallback so the page is never blocked
+  // Safety fallback
   const safetyTimeout = setTimeout(() => {
     if (loader) {
       loader.style.transition = 'opacity 0.5s ease';
@@ -37,19 +37,19 @@ function initIntroLoader() {
     return;
   }
 
-  // Split title text characters manually
+  // Split title text characters manually with explicit bright white and vibrant emerald
   if (titleEl) {
     titleEl.innerHTML = `
-      <span class="char-span" style="display:inline-block;">G</span>
-      <span class="char-span" style="display:inline-block;">R</span>
-      <span class="char-span" style="display:inline-block;">O</span>
-      <span class="char-span" style="display:inline-block;">W</span>
+      <span class="char-span" style="display:inline-block; color:#FFFFFF !important; text-shadow:0 6px 30px rgba(0,0,0,0.9);">G</span>
+      <span class="char-span" style="display:inline-block; color:#FFFFFF !important; text-shadow:0 6px 30px rgba(0,0,0,0.9);">R</span>
+      <span class="char-span" style="display:inline-block; color:#FFFFFF !important; text-shadow:0 6px 30px rgba(0,0,0,0.9);">O</span>
+      <span class="char-span" style="display:inline-block; color:#FFFFFF !important; text-shadow:0 6px 30px rgba(0,0,0,0.9);">W</span>
       <span style="display:inline-block; width: 0.35em;"></span>
       <span class="bird-word" style="display:inline-block;">
-        <span class="char-span" style="display:inline-block; color:var(--accent-green);">B</span>
-        <span class="char-span" style="display:inline-block; color:var(--accent-green);">I</span>
-        <span class="char-span" style="display:inline-block; color:var(--accent-green);">R</span>
-        <span class="char-span" style="display:inline-block; color:var(--accent-green);">D</span>
+        <span class="char-span" style="display:inline-block; color:#10E599 !important; text-shadow:0 0 30px rgba(16,229,153,0.8);">B</span>
+        <span class="char-span" style="display:inline-block; color:#10E599 !important; text-shadow:0 0 30px rgba(16,229,153,0.8);">I</span>
+        <span class="char-span" style="display:inline-block; color:#10E599 !important; text-shadow:0 0 30px rgba(16,229,153,0.8);">R</span>
+        <span class="char-span" style="display:inline-block; color:#10E599 !important; text-shadow:0 0 30px rgba(16,229,153,0.8);">D</span>
       </span>
     `;
   }
