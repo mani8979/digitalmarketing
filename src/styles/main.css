@@ -100,7 +100,7 @@ html {
   -webkit-text-size-adjust: 100%;
   color-scheme: light;
   background-color: #FFFFFF !important;
-  overflow-x: hidden !important;
+  overflow-x: clip;
   width: 100%;
   max-width: 100%;
 }
@@ -111,8 +111,7 @@ body {
   color: #1E293B !important;
   line-height: 1.65;
   font-weight: 400;
-  overflow-x: hidden !important;
-  position: relative;
+  overflow-x: clip;
   min-height: 100vh;
   width: 100%;
   max-width: 100%;
