@@ -484,63 +484,59 @@
 }
 
 /* --------------------------------------------------------------------------
-   3. SERVICES SECTION — BULLETPROOF STICKY STACKING DECK
+   3. SERVICES SECTION — GSAP PINNED STACK SCROLL DECK
    -------------------------------------------------------------------------- */
 .services-stack-section {
   position: relative;
   background: #FFFFFF !important;
-  padding: 5.5rem 1.5rem 6.5rem;
-  overflow: visible;
+  min-height: 100vh;
+  padding: 4.5rem 1.5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .stack__header {
   text-align: center;
-  margin-bottom: 3.5rem;
+  margin-bottom: 2rem;
   position: relative;
-  z-index: 2;
+  z-index: 20;
   max-width: 820px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .stack__stage {
   position: relative;
   width: min(1120px, 100%);
   margin: 0 auto;
+  z-index: 10;
 }
 
 .stack__deck {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
   position: relative;
+  width: 100%;
+  height: min(68vh, 540px);
+  margin: 0 auto;
 }
 
-/* Sticky Stacked Cards */
+/* Stack Card Absolute Layering */
 .stack-card {
-  position: sticky;
-  top: 100px;
-  min-height: 380px;
+  position: absolute;
+  inset: 0;
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: clamp(1.5rem, 3vw, 2.75rem);
-  padding: clamp(2rem, 3.5vw, 2.75rem);
+  padding: clamp(1.75rem, 3.5vw, 2.75rem);
   border-radius: var(--radius-xl);
-  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08), 0 2px 10px rgba(15, 23, 42, 0.04) !important;
+  transform-origin: 50% 0%;
+  will-change: transform, opacity;
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.12), 0 2px 10px rgba(15, 23, 42, 0.04) !important;
   border: 1px solid rgba(15, 23, 42, 0.12) !important;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
   background: #FFFFFF !important;
 }
-
-.stack-card:nth-child(1) { top: 90px; z-index: 1; }
-.stack-card:nth-child(2) { top: 110px; z-index: 2; }
-.stack-card:nth-child(3) { top: 130px; z-index: 3; }
-.stack-card:nth-child(4) { top: 150px; z-index: 4; }
-.stack-card:nth-child(5) { top: 170px; z-index: 5; }
-.stack-card:nth-child(6) { top: 190px; z-index: 6; }
-.stack-card:nth-child(7) { top: 210px; z-index: 7; }
-.stack-card:nth-child(8) { top: 230px; z-index: 8; }
 
 .stack-card[data-tone="1"] { background: #FFFFFF !important; border-color: rgba(5, 150, 105, 0.35) !important; }
 .stack-card[data-tone="2"] { background: #F8FAFC !important; border-color: rgba(37, 99, 235, 0.35) !important; }

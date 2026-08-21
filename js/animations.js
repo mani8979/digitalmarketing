@@ -1,10 +1,10 @@
 /**
- * GROW BIRD — Animations, Intro Loader & Smooth Interactions (animations.js)
+ * GROW BIRD — Animations, Intro Loader & GSAP Stack Scroll Deck (animations.js)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   initIntroLoader();
-  initLenisSmoothScroll();
+  initLenisAndStackScroll();
   initCounters();
   initCardSpotlight();
   initCapabilityTabs();
@@ -148,23 +148,131 @@ function initIntroLoader() {
 }
 
 /**
- * 1. Lenis Smooth Scroll
+ * 1. Lenis Smooth Scroll & GSAP Pinned Stack Scroll Deck
  */
-function initLenisSmoothScroll() {
+function initLenisAndStackScroll() {
+  // Initialize Lenis Smooth Scroll
+  let lenis;
   if (typeof Lenis !== 'undefined') {
-    const lenis = new Lenis({
-      duration: 1.1,
+    lenis = new Lenis({
+      duration: 1.15,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
-      touchMultiplier: 1.4,
+      touchMultiplier: 1.3,
     });
 
-    function raf(time) {
-      lenis.raf(time);
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add((time) => lenis.raf(time * 1000));
+      gsap.ticker.lagSmoothing(0);
+    } else {
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
       requestAnimationFrame(raf);
     }
-    requestAnimationFrame(raf);
   }
+
+  // GSAP Stack Scroll
+  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const servicesSection = document.getElementById('services');
+  const cards = gsap.utils.toArray('.stack-card');
+
+  if (!servicesSection || !cards.length) return;
+
+  const isMobile = window.innerWidth <= 768;
+  const PEEK = isMobile ? 12 : 24;
+  const SCALE_STEP = isMobile ? 0.022 : 0.03;
+
+  function stackPose(index) {
+    return {
+      y: index * PEEK,
+      scale: 1 - index * SCALE_STEP,
+    };
+  }
+
+  // Initial stacking set
+  cards.forEach((card, i) => {
+    gsap.set(card, {
+      zIndex: cards.length - i,
+      y: window.innerHeight * 0.38 + i * PEEK,
+      scale: stackPose(i).scale * 0.95,
+      rotate: 0,
+      opacity: 1,
+      transformOrigin: '50% 0%',
+    });
+  });
+
+  // Timeline with ScrollTrigger pinning
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: '#services',
+      start: 'top top',
+      end: () => `+=${cards.length * window.innerHeight * 0.65}`,
+      pin: true,
+      scrub: 0.75,
+      anticipatePin: 1,
+      invalidateOnRefresh: true,
+    },
+  });
+
+  // Cards entrance to stack
+  cards.forEach((card, i) => {
+    tl.to(
+      card,
+      {
+        ...stackPose(i),
+        ease: 'power3.out',
+        duration: 1,
+      },
+      i * 0.06
+    );
+  });
+
+  tl.to({}, { duration: 0.25 });
+
+  // Progressive fly-off of top cards
+  const flyAt = tl.duration();
+  const flying = cards.slice(0, -1);
+
+  flying.forEach((card, i) => {
+    const time = flyAt + i * 0.95;
+    const behind = cards.slice(i + 1);
+
+    tl.to(
+      card,
+      {
+        y: () => -window.innerHeight * 1.12,
+        rotate: isMobile ? -8 : -15,
+        scale: 0.92,
+        opacity: 0.25,
+        ease: 'power2.inOut',
+        duration: 0.9,
+      },
+      time
+    );
+
+    tl.to(
+      behind,
+      {
+        y: (index) => stackPose(index).y,
+        scale: (index) => stackPose(index).scale,
+        ease: 'none',
+        duration: 0.9,
+      },
+      time
+    );
+  });
+
+  tl.to({}, { duration: 0.2 });
+
+  window.addEventListener('resize', () => {
+    ScrollTrigger.refresh();
+  });
 }
 
 /**
