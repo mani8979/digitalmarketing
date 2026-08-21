@@ -35,13 +35,13 @@ const Contact = () => {
           <div className="contact-info-col">
             <div className="section-eyebrow">
               <span className="dot"></span>
-              <span>GET IN TOUCH</span>
+              <span>LET'S WORK TOGETHER</span>
             </div>
             <h2 className="section-title text-left">
-              Let's Build Your <br /><span className="text-gradient">Digital Future.</span>
+              Tell Us About <br /><span className="text-gradient">Your Business.</span>
             </h2>
             <p className="contact-lead">
-              Ready to upgrade your digital presence and scale your customer acquisition? Book a free discovery call with our growth team today.
+              Whether you're starting from scratch or looking to grow faster — we're here to help. Share your goals and we'll come back with a clear plan.
             </p>
 
             <div className="contact-details-wrap">
