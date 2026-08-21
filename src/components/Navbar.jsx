@@ -82,6 +82,7 @@ const Navbar = () => {
         </div>
       </header>
 
+      <div className={`mobile-nav-overlay ${menuOpen ? 'open' : ''}`} onClick={closeMenu} aria-hidden="true"></div>
       <div className={`mobile-nav-drawer ${menuOpen ? 'open' : ''}`} id="mobileNavDrawer" aria-hidden={!menuOpen}>
         <nav className="mobile-nav-links">
           <a href="#hero" className="mobile-nav-link" onClick={closeMenu}>Home</a>
