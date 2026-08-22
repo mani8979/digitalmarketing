@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Lenis from 'lenis';
 
 import './styles/main.css';
@@ -6,7 +6,7 @@ import './styles/components.css';
 import './styles/sections.css';
 import './styles/responsive.css';
 
-import Loader from './components/Loader';
+
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -20,7 +20,6 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 function App() {
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -50,7 +49,7 @@ function App() {
 
   return (
     <>
-      {loading && <Loader onComplete={() => setLoading(false)} />}
+
       <div className="bg-grid-texture"></div>
       
       <Navbar />

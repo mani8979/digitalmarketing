@@ -1,31 +1,31 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    const btn = e.target.querySelector('button[type="submit"]');
-    if (!btn) return;
-    
-    const originalText = btn.innerHTML;
-    btn.innerHTML = `<span class="btn-loader" style="width:16px;height:16px;border:2px solid #fff;border-top-color:transparent;border-radius:50%;display:inline-block;animation:spin 1s linear infinite;"></span><span>Sending...</span>`;
-    btn.disabled = true;
+    const form = e.target;
 
-    setTimeout(() => {
-      btn.innerHTML = `<span>Request Sent Successfully</span>`;
-      btn.classList.remove('btn-primary');
-      btn.classList.add('btn-secondary');
-      btn.style.background = 'var(--accent-green)';
-      btn.style.color = '#fff';
-      e.target.reset();
-      
-      setTimeout(() => {
-        btn.innerHTML = originalText;
-        btn.disabled = false;
-        btn.classList.add('btn-primary');
-        btn.classList.remove('btn-secondary');
-        btn.style = '';
-      }, 3000);
-    }, 1500);
+    const firstName = form.firstName.value.trim();
+    const lastName  = form.lastName.value.trim();
+    const email     = form.workEmail.value.trim();
+    const message   = form.message.value.trim();
+
+    // Collect checked services
+    const serviceCheckboxes = form.querySelectorAll('input[name="services[]"]:checked');
+    const services = Array.from(serviceCheckboxes).map(cb => cb.value).join(', ') || 'Not specified';
+
+    const waMessage =
+      `Hello Grow Bird! 👋\n\n` +
+      `*Name:* ${firstName} ${lastName}\n` +
+      `*Email:* ${email}\n` +
+      `*Services Needed:* ${services}\n` +
+      (message ? `*Message:* ${message}\n` : '') +
+      `\nLooking forward to hearing from you!`;
+
+    const waUrl = `https://wa.me/919522298777?text=${encodeURIComponent(waMessage)}`;
+    window.open(waUrl, '_blank', 'noopener,noreferrer');
+
+    form.reset();
   };
 
   return (
