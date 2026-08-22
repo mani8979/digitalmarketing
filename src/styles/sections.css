@@ -1536,17 +1536,17 @@
    14. FOOTER
    -------------------------------------------------------------------------- */
 .footer {
-  background: #0B0F19 !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: #ffffff !important;
+  border-top: 1px solid #E2E8F0;
   padding-top: 5rem;
   padding-bottom: 2.5rem;
   position: relative;
   z-index: 1;
-  color: #F8FAFC !important;
+  color: #1E293B !important;
 }
 
 .footer .brand-logo-text .grow {
-  color: #FFFFFF !important;
+  color: #1E293B !important;
 }
 
 .footer-top-grid {
@@ -1558,7 +1558,7 @@
 
 .footer-brand-bio {
   font-size: 0.95rem;
-  color: #94A3B8 !important;
+  color: #475569 !important;
   line-height: 1.7;
   margin-top: 1.25rem;
   margin-bottom: 1.5rem;
@@ -1570,17 +1570,17 @@
   font-size: 0.82rem;
   font-weight: 700;
   color: #059669 !important;
-  background: rgba(5, 150, 105, 0.15) !important;
+  background: rgba(5, 150, 105, 0.1) !important;
   padding: 0.3rem 0.75rem;
   border-radius: var(--radius-full);
-  border: 1px solid rgba(5, 150, 105, 0.3) !important;
+  border: 1px solid rgba(5, 150, 105, 0.25) !important;
 }
 
 .footer-col-title {
   font-family: var(--font-display);
   font-size: 1.1rem;
   font-weight: 700;
-  color: #FFFFFF !important;
+  color: #0F172A !important;
   margin-bottom: 1.5rem;
 }
 
@@ -1592,7 +1592,7 @@
 
 .footer-link {
   font-size: 0.9rem;
-  color: #94A3B8 !important;
+  color: #475569 !important;
   transition: color var(--trans-fast), transform var(--trans-fast);
   display: inline-block;
 }
@@ -1607,7 +1607,7 @@
   align-items: center;
   justify-content: space-between;
   padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid #E2E8F0;
   font-size: 0.85rem;
   color: #64748B !important;
 }

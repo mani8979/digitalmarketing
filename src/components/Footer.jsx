@@ -29,9 +29,9 @@ const Footer = () => {
               We help businesses grow online through creative marketing, modern websites and AI-powered solutions.
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-              <a href="tel:+919522298777" style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: '#94A3B8', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 600, transition: 'color 0.2s' }}
+              <a href="tel:+919522298777" style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: '#475569', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 600, transition: 'color 0.2s' }}
                 onMouseEnter={e => e.currentTarget.style.color = '#059669'}
-                onMouseLeave={e => e.currentTarget.style.color = '#94A3B8'}>
+                onMouseLeave={e => e.currentTarget.style.color = '#475569'}>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path>
                 </svg>
@@ -43,7 +43,7 @@ const Footer = () => {
                 </svg>
                 WhatsApp Us
               </a>
-              <span style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', color: '#64748B', fontSize: '0.85rem', lineHeight: 1.6 }}>
+              <span style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', color: '#475569', fontSize: '0.85rem', lineHeight: 1.6 }}>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ flexShrink: 0, marginTop: '2px' }}>
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                   <circle cx="12" cy="10" r="3"></circle>
@@ -82,7 +82,7 @@ const Footer = () => {
           {/* Newsletter Column */}
           <div>
             <h4 className="footer-col-title">Stay Updated</h4>
-            <p style={{ color: '#94A3B8', fontSize: '0.88rem', marginBottom: '1.25rem', lineHeight: 1.6 }}>
+            <p style={{ color: '#475569', fontSize: '0.88rem', marginBottom: '1.25rem', lineHeight: 1.6 }}>
               Get monthly marketing insights and growth tips delivered to your inbox.
             </p>
             <form onSubmit={e => e.preventDefault()} style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
@@ -93,9 +93,9 @@ const Footer = () => {
                 style={{
                   padding: '0.75rem 1rem',
                   borderRadius: '8px',
-                  border: '1px solid rgba(255,255,255,0.12)',
-                  background: 'rgba(255,255,255,0.06)',
-                  color: '#F8FAFC',
+                  border: '1px solid #CBD5E1',
+                  background: '#F8FAFC',
+                  color: '#1E293B',
                   fontSize: '0.9rem',
                   outline: 'none',
                   width: '100%',
@@ -128,12 +128,12 @@ const Footer = () => {
         <div className="footer-bottom-bar">
           <p>&copy; 2026 Grow Bird. All Rights Reserved.</p>
           <div style={{ display: 'flex', gap: '1.5rem' }}>
-            <a href="#" style={{ color: '#64748B', textDecoration: 'none', fontSize: '0.85rem', transition: 'color 0.2s' }}
+            <a href="#" style={{ color: '#475569', textDecoration: 'none', fontSize: '0.85rem', transition: 'color 0.2s' }}
               onMouseEnter={e => e.currentTarget.style.color = '#059669'}
-              onMouseLeave={e => e.currentTarget.style.color = '#64748B'}>Privacy Policy</a>
-            <a href="#" style={{ color: '#64748B', textDecoration: 'none', fontSize: '0.85rem', transition: 'color 0.2s' }}
+              onMouseLeave={e => e.currentTarget.style.color = '#475569'}>Privacy Policy</a>
+            <a href="#" style={{ color: '#475569', textDecoration: 'none', fontSize: '0.85rem', transition: 'color 0.2s' }}
               onMouseEnter={e => e.currentTarget.style.color = '#059669'}
-              onMouseLeave={e => e.currentTarget.style.color = '#64748B'}>Terms of Service</a>
+              onMouseLeave={e => e.currentTarget.style.color = '#475569'}>Terms of Service</a>
           </div>
         </div>
       </div>
