@@ -105,87 +105,50 @@ const Hero = () => {
 
           {/* Hero Visual (Right) */}
           <div className="hero-visual-wrapper">
-            {/* Floating AI Badge Top */}
-            <div className="floating-badge badge-top-right">
-              <div className="card-icon-box" style={{ width: '34px', height: '34px', margin: 0 }}>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
-                </svg>
-              </div>
-              <div>
-                <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', fontWeight: 700 }}>AI SOLUTIONS</div>
-                <div style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--accent-green)' }}>Smart Automation Active</div>
-              </div>
-            </div>
 
-            {/* Main Interactive Dashboard Graphic */}
-            <div className="hero-visual-card glass-card glow-card-top">
-              <div className="hero-card-header">
-                <div className="hero-card-title">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-green)" strokeWidth="2">
-                    <path d="M3 3v18h18"></path>
-                    <path d="M18 9l-5 5-4-4-6 6"></path>
+            {/* Main Dashboard Image */}
+            <div style={{ position: 'relative', borderRadius: '20px', overflow: 'visible' }}>
+              <img
+                src="/hero-dashboard.jpg"
+                alt="Grow Bird Marketing Dashboard — Multi-Metric Growth Analytics"
+                style={{
+                  width: '100%',
+                  borderRadius: '20px',
+                  display: 'block',
+                  boxShadow: '0 24px 80px rgba(5,150,105,0.22), 0 4px 24px rgba(0,0,0,0.18)',
+                  border: '1.5px solid rgba(5,150,105,0.18)',
+                }}
+              />
+
+              {/* Floating AI Badge Top-Right */}
+              <div className="floating-badge badge-top-right">
+                <div className="card-icon-box" style={{ width: '34px', height: '34px', margin: 0 }}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
                   </svg>
-                  <span>Growth Engine Telemetry</span>
                 </div>
-                <div className="status-live">Live Analytics</div>
+                <div>
+                  <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', fontWeight: 700 }}>AI SOLUTIONS</div>
+                  <div style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--accent-green)' }}>Smart Automation Active</div>
+                </div>
               </div>
 
-              {/* Dynamic Growth SVG Chart */}
-              <div className="growth-chart-box">
-                <svg className="growth-chart-svg" viewBox="0 0 400 180" preserveAspectRatio="none">
-                  <defs>
-                    <linearGradient id="chartFillLight" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#059669" stopOpacity="0.25" />
-                      <stop offset="100%" stopColor="#059669" stopOpacity="0" />
-                    </linearGradient>
-                    <linearGradient id="lineGradLight" x1="0" y1="0" x2="1" y2="0">
-                      <stop offset="0%" stopColor="#2563EB" />
-                      <stop offset="50%" stopColor="#059669" />
-                      <stop offset="100%" stopColor="#10B981" />
-                    </linearGradient>
-                  </defs>
-                  {/* Grid Lines */}
-                  <line x1="0" y1="40" x2="400" y2="40" stroke="rgba(15,23,42,0.06)" strokeDasharray="3,3" />
-                  <line x1="0" y1="90" x2="400" y2="90" stroke="rgba(15,23,42,0.06)" strokeDasharray="3,3" />
-                  <line x1="0" y1="140" x2="400" y2="140" stroke="rgba(15,23,42,0.06)" strokeDasharray="3,3" />
-
-                  {/* Area Fill */}
-                  <path d="M 0 160 Q 90 140 180 90 T 360 25 L 400 20 L 400 180 L 0 180 Z" fill="url(#chartFillLight)" />
-                  {/* Curved Growth Stroke */}
-                  <path className="chart-line" d="M 0 160 Q 90 140 180 90 T 360 25 L 400 20" fill="none" stroke="url(#lineGradLight)" strokeWidth="3.5" strokeLinecap="round" />
-
-                  {/* Indicator Point Pulse */}
-                  <circle cx="360" cy="25" r="5" fill="#059669" filter="drop-shadow(0 0 6px #059669)" />
-                </svg>
-              </div>
-
-              {/* Trusted Process Sequence */}
-              <div className="hero-process-row" style={{ display: 'flex', justifyContent: 'space-between', padding: '1.25rem 1.5rem', borderTop: '1px solid var(--border-subtle)', background: 'var(--bg-card)' }}>
-                <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-secondary)' }}>Creative</div>
-                <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-muted)' }}>•</div>
-                <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-secondary)' }}>Strategy</div>
-                <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-muted)' }}>•</div>
-                <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-secondary)' }}>Technology</div>
-                <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-muted)' }}>•</div>
-                <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--accent-green)' }}>Growth</div>
+              {/* Floating Conversion Badge Bottom-Left */}
+              <div className="floating-badge badge-bottom-left">
+                <div className="card-icon-box" style={{ width: '34px', height: '34px', margin: 0, background: 'rgba(37,99,235,0.12)', color: '#2563EB' }}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <polyline points="16 11 18 13 22 9"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', fontWeight: 700 }}>CONVERSION FUNNEL</div>
+                  <div style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--text-pure)' }}>Turning Clicks Into Growth</div>
+                </div>
               </div>
             </div>
 
-            {/* Floating Conversion Badge Bottom */}
-            <div className="floating-badge badge-bottom-left">
-              <div className="card-icon-box" style={{ width: '34px', height: '34px', margin: 0, background: 'rgba(37,99,235,0.12)', color: '#2563EB' }}>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="9" cy="7" r="4"></circle>
-                  <polyline points="16 11 18 13 22 9"></polyline>
-                </svg>
-              </div>
-              <div>
-                <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', fontWeight: 700 }}>CONVERSION FUNNEL</div>
-                <div style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--text-pure)' }}>Turning Clicks Into Growth</div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
