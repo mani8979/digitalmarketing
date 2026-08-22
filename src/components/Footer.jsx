@@ -14,9 +14,9 @@ const Footer = () => {
                   src="/logo.png"
                   alt="Grow Bird — Smart Marketing. Real Growth."
                   style={{
-                    height: '56px',
+                    height: '100px',
                     width: 'auto',
-                    maxWidth: '220px',
+                    maxWidth: '300px',
                     objectFit: 'contain',
                     display: 'block',
                     filter: 'brightness(1.1)',
