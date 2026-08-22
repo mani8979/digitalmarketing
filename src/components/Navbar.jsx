@@ -47,13 +47,28 @@ const Navbar = () => {
     <>
       <header className={`navbar ${scrolled ? 'scrolled' : ''}`} id="navbar" style={{ zIndex: 1002 }}>
         <div className="container navbar-container">
-          <a href="#hero" className="brand-logo" aria-label="Grow Bird Home" onClick={closeMenu} style={{ padding: 0 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+            <a href="#hero" className="brand-logo" aria-label="Grow Bird Home" onClick={closeMenu} style={{ padding: 0 }}>
+              <img
+                src="/logo.png"
+                alt="Grow Bird Smart Marketing Real Growth"
+                style={{ height: '44px', width: 'auto', maxWidth: '160px', objectFit: 'contain', display: 'block', flexShrink: 0 }}
+              />
+            </a>
+            {/* Tagline below logo */}
             <img
-              src="/logo.png"
-              alt="Grow Bird Smart Marketing Real Growth"
-              style={{ height: '44px', width: 'auto', maxWidth: '160px', objectFit: 'contain', display: 'block', flexShrink: 0 }}
+              src="/tagline.jpg"
+              alt="Smart Marketing. Real Growth. — Digital Marketing Agency"
+              style={{
+                display: 'block',
+                height: '22px',
+                width: 'auto',
+                maxWidth: '200px',
+                objectFit: 'contain',
+                marginTop: '3px',
+              }}
             />
-          </a>
+          </div>
 
           <nav className="nav-menu" aria-label="Primary Navigation">
             {NAV_LINKS.map(({ href, label, id }) => (
