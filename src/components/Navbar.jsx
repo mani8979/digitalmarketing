@@ -42,9 +42,9 @@ const Navbar = () => {
               src="/logo.png"
               alt="Grow Bird — Smart Marketing. Real Growth."
               style={{
-                height: '80px',
+                height: '100px',
                 width: 'auto',
-                maxWidth: '260px',
+                maxWidth: '300px',
                 objectFit: 'contain',
                 display: 'block',
                 flexShrink: 0,
