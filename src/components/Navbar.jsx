@@ -51,7 +51,7 @@ const Navbar = () => {
             <img
               src="/logo.png"
               alt="Grow Bird Smart Marketing Real Growth"
-              style={{ height: '100px', width: 'auto', maxWidth: '300px', objectFit: 'contain', display: 'block', flexShrink: 0 }}
+              style={{ height: '44px', width: 'auto', maxWidth: '160px', objectFit: 'contain', display: 'block', flexShrink: 0 }}
             />
           </a>
 
