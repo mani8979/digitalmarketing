@@ -23,6 +23,18 @@ const Footer = () => {
                   }}
                 />
               </a>
+              {/* Tagline image below logo */}
+              <img
+                src="/tagline.jpg"
+                alt="Smart Marketing. Real Growth. — Digital Marketing Agency"
+                style={{
+                  marginTop: '14px',
+                  width: '100%',
+                  maxWidth: '300px',
+                  display: 'block',
+                  objectFit: 'contain',
+                }}
+              />
             </div>
             <p className="footer-brand-bio">
               Smart Marketing. Real Growth.<br />
